@@ -1,0 +1,72 @@
+@use '../util' as *;
+
+.header {
+  @include df(center, center, column);
+  &-container {
+    width: 100%;
+    max-width: 1200px;
+    background: var(--Neutral-0);
+    border-radius: 10px;
+    padding: 10px;
+    @include df(space-between, center, row wrap, 10px);
+    .logo {
+      &-light {
+        display: flex;
+      }
+      &-dark {
+        display: none;
+      }
+    }
+    .theme-btn {
+      cursor: pointer;
+      outline: transparent;
+      border: none;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      background: var(--Neutral-100);
+      @include df(center, center);
+      svg {
+        position: absolute;
+        fill: var(--Neutral-800);
+      }
+      &.light-mode {
+        svg.dark-mode {
+          opacity: 100%;
+        }
+        svg.light-mode {
+          opacity: 0;
+        }
+      }
+      &.dark-mode {
+        svg.light-mode {
+          opacity: 100%;
+        }
+        svg.dark-mode {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+#root[data-theme="dark-mode"] .header{
+  &-container {
+    background: var(--Neutral-800);
+    .logo {
+      &-light {
+        display: none;
+      }
+      &-dark {
+        display: flex;
+      }
+    }
+    .theme-btn {
+      background: var(--Neutral-600);
+      svg {
+        fill: var(--Neutral-0);
+      }
+    }
+  }
+}

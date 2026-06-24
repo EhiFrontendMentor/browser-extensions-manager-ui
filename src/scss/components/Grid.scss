@@ -1,0 +1,69 @@
+@use '../util/' as *;
+
+.grid {
+  @include df(center, center, column, 15px);
+  &-header {
+    width: 100%;
+    max-width: 1200px;
+    @include df(center, center, column, 10px);
+    @media(min-width: $mini-tab) {
+      @include df( space-between, center, row wrap, 10px);
+    }
+    fieldset {
+      border: none;
+      @include df(normal, normal, row, 10px);
+      input {
+        display: none;
+        &:checked + label {
+          background: var(--Red-700);
+          border-color: var(--Red-500);
+          color: var(--Neutral-0);
+        }
+      }
+      label {
+        cursor: pointer;
+        border: 1px solid var(--Neutral-300);
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all .3s;
+        background: var(--Neutral-0);
+      }
+    }
+  }
+  &-body {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+
+    &-empty {
+      min-height: 400px;
+      padding: 18px;
+      text-align: center;
+      color: var(--Neutral-600);
+      background: rgba(255,255,255,0.6);
+      border-radius: 12px;
+      @include df(center, center);
+    }
+  }
+}
+
+#root[data-theme="dark-mode"] .grid {
+  &-header {
+    fieldset {
+      input {
+        display: none;
+        &:checked + label {
+          background: var(--Red-400);
+          border-color: var(--Red-500);
+          color: var(--Neutral-900);
+        }
+      }
+      label {
+        background: var(--Neutral-600);
+        border-color: var(--Neutral-300);
+      }
+    }
+  }
+}

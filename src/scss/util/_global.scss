@@ -1,0 +1,25 @@
+@use './vars' as *;
+
+*,*::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'noto-sans';
+  
+  #root {
+    min-height: 100dvh;
+    padding: 20px;
+    background: var(--Neutral-200);
+    color: var(--Neutral-900);
+    transition: all .3s;
+    @include df(normal, normal, column, 40px);
+
+    &[data-theme="dark-mode"] {
+      background: var(--Dark-Gradient);
+      color: var(--Neutral-0);
+    }
+  }
+}
