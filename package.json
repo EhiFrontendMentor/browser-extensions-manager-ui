@@ -1,9 +1,9 @@
 {
+  "homepage": "https://EhiFrontendMentor.github.io/browser-extensions-manager-ui",
   "name": "browser_extensions_manager_ui_react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://EhiFrontendMentor.github.io/browser-extensions-manager-ui",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
