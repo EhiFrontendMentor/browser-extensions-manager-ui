@@ -3,7 +3,8 @@ import { StrictMode } from "react";
 import { sel } from "./js/custom.js";
 import Header from "./components/Header.jsx";
 import Grid from "./components/Grid.jsx";
-import {ExtensionsProvider} from "./context/ExtensionsContext.jsx";
+import { ExtensionsProvider } from "./context/ExtensionsContext.jsx";
+import "./scss/components/Attribution.scss";
 
 function App() {
   return <ExtensionsProvider>
