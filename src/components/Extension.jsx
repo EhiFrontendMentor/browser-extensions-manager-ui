@@ -14,7 +14,7 @@ export default function Extension({ data }) {
     <div className="extension-info">
       <div className="extension-info-img">
         <img
-          src={`src${data.logo.slice(1, data.logo.length)}`}
+          src={`/src${data.logo.slice(1, data.logo.length)}`}
           alt={`${data.name} Logo`}
         />
       </div>
